@@ -4,17 +4,20 @@
 
 ###Features
 
-- Zoom up to the sample accuracy
+- **Zoom** up to the sample accuracy
 - Control the zoom with the mouse wheel
-- Scroll the waveform
+- **Scroll** the waveform
 - Control the scroll with mouse drag
 - The waveform scrolls during playback
 - Multichannel
 - Customisable
 
+
+![Zenon.js screenshot](https://github.com/JeremieGarcelon/Zenon.js/blob/master/screenshot-01.png)
+
 ###What is this for ?
  
-It is a component for creating audio applications.
+It is a component for **creating audio applications**.
 
 ### Under development
 
@@ -47,7 +50,7 @@ So, there is imperfections in the code.
 Sometimes, I have doubts about the right way to do.  
 I mark it all in the code with @TODO 
 
-Let me know your needs or make a pull request.
+**Let me know your needs** or make a pull request.
 
 ###What next ?
 
