@@ -101,6 +101,25 @@ var Zenon=(function(){
 	////////////
 	// Loader
 
+	Zenon.instance.prototype.loadBuffer=function(buffer){
+		this.cacheInit(buffer);
+		this.playerSetBuffer(buffer);
+		this.zoom=0;
+		this.drawStart=0;
+		this.draw();
+		if(this.loaderLoadedCallback){
+			this.loaderLoadedCallback(buffer);
+		}
+	};
+
+	Zenon.instance.prototype.loadFromBuffer=function(buffer){
+		if(this.loaderInitCallback){
+			this.loaderInitCallback();
+		}
+		this.playerBufferLoaded=false;
+		this.loadBuffer(buffer);
+	}
+
 	Zenon.instance.prototype.loadFromUrl=function(url){
 		if(this.loaderLoading == false){
 			this.loaderLoading=true;
@@ -128,15 +147,8 @@ var Zenon=(function(){
 					}
 					that.audioCtx.decodeAudioData(xhr.response, function(buffer){
 						///////
-						that.cacheInit(buffer);
-						that.playerSetBuffer(buffer);
-						that.zoom=0;
-						that.drawStart=0;
-						that.draw();
+						that.loadBuffer(buffer);
 						///////
-						if(that.loaderLoadedCallback){
-							that.loaderLoadedCallback(buffer);
-						}
 						that.loaderLoading=false;
 					});
 				}
